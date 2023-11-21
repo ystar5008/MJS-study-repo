@@ -12,4 +12,5 @@ const person = {
 
 //Obejct.getOwnPropertyDescriptor 메소드를 통해 간접적으로 프로퍼티 어트리뷰트 확인
 console.log(Object.getOwnPropertyDescriptor(person, 'age'))
+console.log("🚀 ~ file: 16.02.js:15 ~ person:", person)
 console.log(Object.getOwnPropertyDescriptors(person))
