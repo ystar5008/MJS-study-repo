@@ -11,7 +11,7 @@ class Animal {
 
 
 // 강아지(Dog) 생성자 함수, Animal을 상속받음
-class Dog {
+class Dog  {
     constructor(name, breed) {
         // 부모 생성자 호출 (상속)
         Animal.call(this, name);
