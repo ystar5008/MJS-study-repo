@@ -1,0 +1,2 @@
+Number.isFinite(NaN); // -> false
+
