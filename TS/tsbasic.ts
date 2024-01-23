@@ -195,3 +195,6 @@ console.log(myDirection);
 //{ Up: 'UP', Down: 'DOWN', Left: 'LEFT', Right: 'RIGHT' }
 console.log(Direction);
 console.log(myDirection[0]);
+
+type consttypes = string | undefined;
+const str123: consttypes = '123';
