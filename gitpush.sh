@@ -5,10 +5,10 @@ end_time=$(date +%s)
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 target_branch="NoteBookBranch"
 echo "현재 브랜치 이름"
-if [ "$current_branch" = "main" ]; then
-    git checkout $target_branch
-    continue
-fi
+# if [ "$current_branch" = "main" ]; then
+#     git checkout $target_branch
+#     continue
+# fi
 echo "깃커밋을 실행합니다.$start_time"
 git pull origin main
 git add . 
