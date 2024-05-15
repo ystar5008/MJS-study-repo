@@ -31,4 +31,7 @@ namespace 맥주 {
   }
 
   export type 가격 = number;
+  export type 가격 = number;
 }
+
+
