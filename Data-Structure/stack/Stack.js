@@ -1,57 +1,61 @@
-var Stack = /** @class */ (function () {
-    function Stack() {
-        this.arr = [];
+class Stack {
+    constructor() {
+        this.items = []; // 스택을 배열로 구현
     }
-    //스택에 요소 삽입
-    Stack.prototype.push = function (value) {
-        return this.arr.push(value);
-    };
-    //스택의 맨위 요소 제거
-    Stack.prototype.pop = function () {
-        return this.arr.pop();
-    };
-    //스택의 맨위 요소 확인 peek
-    Stack.prototype.top = function () {
-        //at(-1) = 배열의 맨뒤 요소 확인
-        return this.arr.at(-1);
-    };
-    Object.defineProperty(Stack.prototype, "length", {
-        //get 키워드는 클래스 내에서 사용되는 특별한 메서드나 속성앞에 붙여서 해당 메서드나 속성을 정의하는데 사용
-        get: function () {
-            return this.arr.length;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    //일반 함수로 선언
-    Stack.prototype.leength = function () {
-        return this.arr.length;
-    };
-    Stack.prototype.getarr = function () {
-        return this.arr;
-    };
-    Stack.prototype.obj = function () {
-        return Object.keys(this.arr);
-    };
-    return Stack;
-}());
-var stack = new Stack();
-stack.push(5);
-stack.push(5);
-stack.push(5);
-stack.push(3);
-stack.push(8);
-stack.push(32);
-stack.push(32);
-stack.push(32);
-stack.push(32);
-console.log(stack.length);
-//get 키워드가 없을떈 일반 함수를 호출하여 사용
-console.log(stack.leength());
-stack.pop();
-console.log(stack.top());
-console.log(stack.arr);
-console.log(stack.getarr());
-console.log(stack.top());
-console.log(stack.arr);
-console.log(stack.obj());
+
+    get length() {
+        return this.items.length
+    }
+
+    // 스택에 요소를 추가하는 메소드 (삽입)
+    push(element) {
+        this.items.push(element);
+    }
+
+    // 스택에서 요소를 제거하고 반환하는 메소드 (제거)
+    pop() {
+        if (this.isEmpty()) {
+            return "Stack is empty";
+        }
+        return this.items.pop();
+    }
+
+    // 스택의 최상단 요소를 반환하는 메소드 (조회)
+    peek() {
+        if (this.isEmpty()) {
+            return "Stack is empty";
+        }
+        return this.items[this.items.length - 1];
+    }
+
+    // 스택이 비어있는지 확인하는 메소드
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    // 스택의 모든 요소를 출력하는 메소드
+    printStack() {
+        console.log(this.items.join(", "));
+    }
+
+    find(a) {
+        let arr = this.items
+        return arr.indexOf(a)
+    }
+}
+
+
+const stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.printStack(); // 10, 20, 30 출력
+
+console.log(stack.pop()); // 30 반환 및 제거
+stack.printStack(); // 10, 20 출력
+
+console.log(stack.peek()); // 20 반환 (최상단 요소)
+
+// 길이를 출력
+console.log(stack.length)
+console.log(stack.find(20))
